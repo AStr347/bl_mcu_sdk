@@ -16,4 +16,4 @@ else()
 message(FATAL_ERROR "${CMAKE_SOURCE_DIR}/bsp/board/${CHIP} is not exist")
 endif()
 
-search_application(${CMAKE_SOURCE_DIR}/${APP_DIR})
+search_application(${APP_DIR})

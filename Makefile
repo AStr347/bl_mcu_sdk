@@ -18,10 +18,11 @@ RM = cmake -E remove_directory
 INTERFACE?=uart
 COMx?=
 BAUDRATE ?=2000000
+FIRMWARE ?= tools/bflb_flash_tool/img/project.bin
 ifeq ($(INTERFACE),uart)
-FLASH_DOWNLOAD_CONFIG:=--chipname=$(CHIP) --interface=uart --port=$(COMx) --baudrate=$(BAUDRATE)
+FLASH_DOWNLOAD_CONFIG:=--chipname=$(CHIP) --interface=uart --port=$(COMx) --baudrate=$(BAUDRATE) --firmware=$(FIRMWARE)
 else
-FLASH_DOWNLOAD_CONFIG:=--chipname=$(CHIP) --interface=$(INTERFACE)
+FLASH_DOWNLOAD_CONFIG:=--chipname=$(CHIP) --interface=$(INTERFACE) --firmware=$(FIRMWARE)
 endif
 
 #option config to use
